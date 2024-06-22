@@ -4,7 +4,14 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("<h1> Проба пера </h1>")
+    data = {
+        'caption': "Мой сайт"
+    }
+    return render(request, 'main/index.html', data)
+
+
+def new(request):
+    return render(request, 'main/new.html')
 
 
 def data(request):
